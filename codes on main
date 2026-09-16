@@ -1,0 +1,204 @@
+import Link from "next/link";
+
+const programs = [
+  {
+    title: "Lidèchip jèn yo",
+    description:
+      "Devlope kapasite, konfyans ak responsablite pou aji nan kominote yo.",
+  },
+  {
+    title: "VWA JENÈS Academy",
+    description:
+      "Aprann, grandi epi prepare tèt ou atravè fòmasyon pou jèn yo.",
+  },
+  {
+    title: "Angajman kominotè",
+    description:
+      "Patisipe nan inisyativ ki ankouraje solidarite ak devlopman kominotè.",
+  },
+];
+
+export default function Home() {
+  return (
+    <main>
+      <header className="border-b border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <Link href="/" className="text-xl font-extrabold tracking-wide text-slate-900">
+            VWA JENÈS
+          </Link>
+
+          <nav className="hidden gap-6 text-sm font-semibold text-slate-700 md:flex">
+            <Link href="#sou-nou">SOU NOU</Link>
+            <Link href="#pwogram">PWOGRAM</Link>
+            <Link href="#academy">ACADEMY</Link>
+            <Link href="#kontakte">KONTAK</Link>
+          </nav>
+
+          <Link
+            href="#membre"
+            className="rounded-md bg-blue-700 px-4 py-3 text-sm font-bold text-white hover:bg-blue-800"
+          >
+            VIN MANM
+          </Link>
+        </div>
+      </header>
+
+      <section className="bg-slate-50">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
+              La Voix de la Jeunesse
+            </p>
+
+            <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-7xl">
+              Vwa jenerasyon k ap{" "}
+              <span className="text-blue-700">prepare demen an.</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              Yon espas pou aprann, devlope lidèchip, patisipe epi kontribye
+              nan konstriksyon yon pi bon sosyete.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="#membre"
+                className="rounded-md bg-blue-700 px-6 py-4 font-bold text-white hover:bg-blue-800"
+              >
+                VIN MANM
+              </Link>
+
+              <Link
+                href="#pwogram"
+                className="rounded-md border border-slate-300 bg-white px-6 py-4 font-bold text-slate-800 hover:bg-slate-100"
+              >
+                DEKOUVRI PWOGRAM NOU YO
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-slate-900 p-10 text-white">
+            <p className="text-5xl font-extrabold text-amber-400">01</p>
+            <p className="mt-20 text-3xl font-bold leading-tight">
+              Chak jèn kapab pote yon chanjman pozitif.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-amber-400">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 px-6 py-8 md:grid-cols-4">
+          {[
+            ["0", "Memb"],
+            ["0", "Fòmasyon"],
+            ["0", "Evènman"],
+            ["0", "Volontè"],
+          ].map(([number, label]) => (
+            <div key={label} className="border-r border-amber-600 p-4 text-center last:border-0">
+              <strong className="block text-3xl text-slate-900">{number}</strong>
+              <span className="text-sm font-semibold uppercase text-slate-800">
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="sou-nou" className="mx-auto max-w-7xl px-6 py-24">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
+          Sou nou
+        </p>
+
+        <div className="mt-5 grid gap-10 md:grid-cols-2">
+          <h2 className="text-4xl font-extrabold text-slate-900 md:text-5xl">
+            Jèn yo nan sant aksyon nou.
+          </h2>
+
+          <p className="text-lg leading-8 text-slate-600">
+            VWA JENÈS se yon òganizasyon ki mete jèn yo nan sant aksyon li,
+            atravè fòmasyon, lidèchip, angajman sitwayen, devlopman pèsonèl
+            ak patisipasyon kominotè.
+          </p>
+        </div>
+      </section>
+
+      <section id="pwogram" className="bg-slate-50 px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
+            Sa nou fè
+          </p>
+
+          <h2 className="mt-4 text-4xl font-extrabold text-slate-900">
+            Opòtinite pou grandi.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {programs.map((program) => (
+              <article
+                key={program.title}
+                className="bg-white p-8 shadow-sm ring-1 ring-slate-200"
+              >
+                <div className="mb-8 h-3 w-12 bg-amber-400" />
+                <h3 className="text-2xl font-bold text-slate-900">
+                  {program.title}
+                </h3>
+                <p className="mt-4 leading-7 text-slate-600">
+                  {program.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="membre" className="bg-blue-700 px-6 py-20 text-white">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-200">
+              Ann angaje nou
+            </p>
+            <h2 className="mt-3 text-4xl font-extrabold">
+              Chanjman an kòmanse avèk ou.
+            </h2>
+          </div>
+
+          <button className="rounded-md bg-white px-6 py-4 font-bold text-slate-900">
+            ENSKRIPSYON À VENIR
+          </button>
+        </div>
+      </section>
+
+      <footer id="kontakte" className="bg-slate-900 px-6 py-12 text-white">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
+          <div>
+            <h3 className="text-xl font-extrabold">VWA JENÈS</h3>
+            <p className="mt-3 text-slate-400">La Voix de la Jeunesse</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold">KONTAK</h3>
+            <a
+              className="mt-3 block text-slate-400 hover:text-white"
+              href="mailto:infovwajenes@gmail.com"
+            >
+              infovwajenes@gmail.com
+            </a>
+          </div>
+
+          <div>
+            <h3 className="font-bold">REZO SOSYAL</h3>
+            <p className="mt-3 text-slate-400">
+              Instagram: @vwajenesht
+              <br />
+              Facebook: @vwajenesht
+            </p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-7xl border-t border-slate-700 pt-6 text-sm text-slate-500">
+          © VWA JENÈS — Tout dwa rezève.
+        </div>
+      </footer>
+    </main>
+  );
+}
